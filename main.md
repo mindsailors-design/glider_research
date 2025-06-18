@@ -80,3 +80,5 @@ Switching from Raspberry Pi OS to Arch Linux on ARM because of touch driver comp
 ## 1. Backlight service for Kobo display on PI4/5
 [Backlight service and client](https://bitbucket.org/mindsailors/backlight_server_client/src/master/)
 Backlight in the Kobo display consists of two rows of leds: one warm and one cold. By changing their current you can adjust their brightness and thus you can adjust the overall color temperature and brightness.
+
+## 1. TODO: Add a table with what feature works on what OS, on what RPi.
