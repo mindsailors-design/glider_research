@@ -5,7 +5,17 @@ Software should be based around XC Soar, an open source glide computer:
 `www.xcsoar.org`
 More on this topic [here](20250123_glider_prototype_1.md).
 
-## 1. Starting with 
+## 1. Overview, what works on what operating system
+| Feature                      | Raspberry Pi OS | Arch Linux on ARM |
+| --------                     | :-----------:   | :-----------:     |
+| Framebuffer mirroring to EPD |       ✅        |       ❓          |
+| Building and running XC Soar |       ✅        |        ❌         |
+| Touchscreen support          |       ❌        |        ❌         |
+
+✅ - tested and working
+❌ - tested and not working
+❓ - untested
+
 ## 1. PI 4 vs PI 5
 Pi 5 is newer and much more powerfull but lacks compatibility in some cases. Pi 4 is less powerfull but is compatible with XC Soar glider software and E-ink display driver out of the box.
 
@@ -80,5 +90,3 @@ Switching from Raspberry Pi OS to Arch Linux on ARM because of touch driver comp
 ## 1. Backlight service for Kobo display on PI4/5
 [Backlight service and client](https://bitbucket.org/mindsailors/backlight_server_client/src/master/)
 Backlight in the Kobo display consists of two rows of leds: one warm and one cold. By changing their current you can adjust their brightness and thus you can adjust the overall color temperature and brightness.
-
-## 1. TODO: Add a table with what feature works on what OS, on what RPi.
