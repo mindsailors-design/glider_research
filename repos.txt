@@ -1,0 +1,6 @@
+git@bitbucket.org:mindsailors/epd_gui_mockup.git
+git@bitbucket.org:mindsailors/backlight_server_client.git
+git@bitbucket.org:mindsailors/it8951_epd_driver.git
+git@bitbucket.org:mindsailors/it8951e_c_driver.git
+git@bitbucket.org:mindsailors/epd_mirror_poc.git
+git@bitbucket.org:mindsailors/glider_research.git
