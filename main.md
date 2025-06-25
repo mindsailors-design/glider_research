@@ -28,19 +28,17 @@ git clone https://github.com/XCSoar/XCSoar
 cd XCSoar/
 git submodule update --init --recursive
 `
-
 I succesfully built it on Raspberry Pi OS from the instructions above. Below are some steps for Arch Linux but they are incomplete as I didn't have enough time to dig into what packages are missing (that's what I stopped at).
 `
 yay -S fmt dbus libsodium freetype2 libpng libjpeg-turbo libtiff c-ares curl openssl perl-xml-parser alsa-lib librsvg libxslt imagemagick gettext mesa libinput ttf-dejavu libdrm lua
 yay -S make librsvg2-bin xsltproc imagemagick gettext sox quilt zim m4 automake
 `
-
 ## 1. Connecting BlueFly and FLARM to the PI 4/5
 BlueFly is a variometer used for measuring vertical speed and altitude based on atmospheric pressure: [BlueFly](https://www.blueflyvario.com/)
 Flarm is the collision warning system for general aviation and drones: [Flarm](https://www.flarm.com/en/)
 Both are using serial port for communication.
 BlueFly uses 115200 baudrate, FLARM uses 19200.
-[FLARM pinout](202501114_flarm_pinout_1.md)
+[FLARM pinout](20250114_flarm_pinout_1.md)
 
 ## 1. Connecting E-ink display to PI 4
 E-ink display driver based on IT8951 driver IC communicates with Raspberry Pi via SPI (MISO, MOSI, SCK, CS) with additional RESET and HARDWARE_READY pins.
@@ -50,20 +48,20 @@ Here is a link to the module and the display that were used during testing:
 
 ## 1. Trying writing my own epd driver from scratch based on Waveshare driver that doesn't work (not finished)
 Based on driver provided by Waveshare (but I didn't manage to get it to work):
-(Waveshare E-ink C driver)[https://www.waveshare.com/wiki/6inch_HD_e-Paper_HAT#Working_with_Raspberry_Pi_.28SPI.29]
-[E-ink C driver repo](https://bitbucket.org/mindsailors/it8951e_c_driver/src/main/)
+[Waveshare E-ink C driver](https://www.waveshare.com/wiki/6inch_HD_e-Paper_HAT#Working_with_Raspberry_Pi_.28SPI.29)
+[E-ink C driver repo](https://github.com/mindsailors-design/it8951e_c_driver.git)
 
 ## 1. Porting E-ink driver from PI 4 to PI 5
 Raspberry Pi 5 lacks support for GPIO libraries used on the Raspberry Pi 4 so to get that driver to work you need to make few changes and install different GPIO library.
 This is the original e-ink driver GitHub repository that works well on Raspberry Pi 4:
 [E-ink driver for RPi 4](https://github.com/GregDMeyer/IT8951)
 And here is my fork of it with different GPIO library that is supported on Raspberry Pi 5:
-[E-ink driver for RPi 5](https://bitbucket.org/mindsailors/it8951_epd_driver/src/master/)
+[E-ink driver for RPi 5](https://github.com/mindsailors-design/it8951_epd_driver.git)
 
 ## 1. Testing E-ink display with gui mockup
-[GUI mockup on epd display](https://bitbucket.org/mindsailors/epd_gui_mockup/src/master/)
+[GUI mockup on epd display](https://github.com/mindsailors-design/epd_gui_mockup.git)
 It is just a simple Python script that uses PyGame to create a window with some graphics and random numbers to be a XC Soar look-a-like.
-Then I put this code into a [epd_driver](https://bitbucket.org/mindsailors/it8951_epd_driver/src/master/) as a `gui_mockup.py`. To run it you need to adjust some paths in 'main()' function because they are direct paths and not relative. You can try few different types of images with different 'Display Modes'.
+Then I put this code into a [epd_driver](https://github.com/mindsailors-design/it8951_epd_driver.git) as a `gui_mockup.py`. To run it you need to adjust some paths in 'main()' function because they are direct paths and not relative. You can try few different types of images with different 'Display Modes'.
 
 ## 1. Forwarding image to the external display (not via HDMI)
 [Forwarding to LCD via SPI](https://noamzeise.com/2024/07/05/mini-monitor.html)
@@ -85,8 +83,8 @@ On Arch Linux I managed to build this driver without issues but still couldn't i
 
 ## 1. Arch Linux Prep for PI4
 Switching from Raspberry Pi OS to Arch Linux on ARM because of touch driver compatibility issues.
-[arch on arm install](20250514_arch_on_arm_install.md)
+[arch on arm install](20250514_arch_on_arm_install_1.md)
 
 ## 1. Backlight service for Kobo display on PI4/5
-[Backlight service and client](https://bitbucket.org/mindsailors/backlight_server_client/src/master/)
+[Backlight service and client](https://github.com/mindsailors-design/backlight_server_client.git)
 Backlight in the Kobo display consists of two rows of leds: one warm and one cold. By changing their current you can adjust their brightness and thus you can adjust the overall color temperature and brightness.
