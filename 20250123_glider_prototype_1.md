@@ -15,7 +15,7 @@ Cobo MPN: \
 *ED060KH6* \
 Datasheet: \
 The closest display to the one in the Cobo Clara HD: \
-https://www.panelook.com/ED060KG1_E_Ink_6.0_EPD_overview_25549.html
+https://www.panelook.com/ED060KG1_E_Ink_6.0_EPD_overview_25549.html \
 Another close one, same resolution, touch panel and backlight but coloured one, no grayscale: \
 https://www.panelook.com/SA1452-FOA_E_Ink_6.0_EPD_overview_49310.html
 
@@ -80,7 +80,8 @@ So library for taking screenshots should support framebuffer in the first place.
 | 13  | 23  | GPIO.23  | IN    | 0 | 33       |   |        | 0v       |     |     |
 | 19  | 24  | GPIO.24  | IN    | 0 | 35       | 0 | IN     | GPIO.27  | 27  | 16  |
 | 26  | 25  | GPIO.25  | IN    | 0 | 37       | 0 | IN     | GPIO.28  | 28  | 20  |
-|     |     | 0v       |       |   | 39       | 0 | IN     | GPIO.29  | 29  | 21  |
+|     |     | 0v       |       |   | 39       | 0 | IN     | GPIO.29  | 29  | 21  | 
+/ 
 SPI on pins 10, 9, 11 (MOSI, MISO, SCLK)
 
 ## Touch Panel
