@@ -81,7 +81,7 @@ So library for taking screenshots should support framebuffer in the first place.
 | 19  | 24  | GPIO.24  | IN    | 0 | 35       | 0 | IN     | GPIO.27  | 27  | 16  |
 | 26  | 25  | GPIO.25  | IN    | 0 | 37       | 0 | IN     | GPIO.28  | 28  | 20  |
 |     |     | 0v       |       |   | 39       | 0 | IN     | GPIO.29  | 29  | 21  | 
-/ 
+
 SPI on pins 10, 9, 11 (MOSI, MISO, SCLK)
 
 ## Touch Panel
